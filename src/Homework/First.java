@@ -1,3 +1,5 @@
+package Homework;
+
 import java.util.Base64;
 import java.util.Scanner;
 
@@ -11,7 +13,7 @@ import java.util.Scanner;
 // Когда программа запросит - введите свое имя латиницей
 // Сделайте pull-request с программой.
 // Отправить в чат задания ссылку на pull-request
-public class HomeWork {
+public class First {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter you full name");
