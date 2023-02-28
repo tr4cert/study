@@ -1,9 +1,6 @@
 package QuizOOP;
 
 public class Question {
-    private static int score = 0;
-    private static int questionsAmount = 0;
-
     private final int NUMBER;
     private final String TEXT;
     private final Option[] OPTIONS;
@@ -12,8 +9,6 @@ public class Question {
         this.NUMBER = number;
         this.TEXT = text;
         this.OPTIONS = options;
-
-        questionsAmount++;
     }
 
     public void printQuestion() {
@@ -25,15 +20,9 @@ public class Question {
 
     public boolean isAnswerCorrect(int answerNumber) {
         if (answerNumber >= 1 && answerNumber <= OPTIONS.length) {
-            if (this.OPTIONS[answerNumber - 1].IS_CORRECT_OPTION) {
-                score++;
-                return true;
-            }
+            return this.OPTIONS[answerNumber - 1].IS_CORRECT_OPTION;
         }
         return false;
     }
 
-    public static String getResult() {
-        return "Результат: " + score + " правильных ответов из " + questionsAmount;
-    }
 }
