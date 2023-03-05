@@ -1,4 +1,4 @@
-package QuizOOP;
+package Homework.QuizOOP;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package QuizOOP;
+package Homework.QuizOOP;
 
 import java.util.Scanner;
 

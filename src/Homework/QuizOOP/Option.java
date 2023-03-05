@@ -1,4 +1,4 @@
-package QuizOOP;
+package Homework.QuizOOP;
 
 public class Option {
     private final int NUMBER;
