@@ -1,30 +1,47 @@
-package QuizOOP;
+package Homework.QuizOOP;
 
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
-        Question[] questions = generateQuestions();
-        startQuiz(questions);
+public class Test {
+    private static int score = 0;
+    private static int questionsAmount;
+    private final Question[] questions;
 
+    public Test() {
+        this.questions = generateQuestions();
+        questionsAmount = questions.length;
     }
 
-    private static void startQuiz(Question[] questions) {
+
+    public void passTest() {
         for (Question question : questions) {
             question.printQuestion();
-            Scanner sc = new Scanner(System.in);
-            try {
-                int userAnswer = sc.nextInt();
-                if (question.isAnswerCorrect(userAnswer)) System.out.println("Правильно");
-                else System.out.println("Неправильно");
-            } catch (Exception e) {
-                System.out.println("На ввод подано некорректное значение");
-            }
+            ask(question);
         }
 
-        System.out.println(Question.getResult());
-
+        printResult();
     }
+
+
+    private static void ask(Question question) {
+        Scanner sc = new Scanner(System.in);
+        try {
+            int userAnswer = sc.nextInt();
+            if (question.isAnswerCorrect(userAnswer)) {
+                System.out.println("Правильно");
+                score++;
+            } else System.out.println("Неправильно");
+        } catch (Exception e) {
+            System.out.println("На ввод подано некорректное значение");
+
+        }
+    }
+
+
+    public static void printResult() {
+        System.out.println("Результат: " + score + " правильных ответов из " + questionsAmount);
+    }
+
 
     private static Question[] generateQuestions() {
 
